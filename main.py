@@ -119,7 +119,7 @@ def train(
         plt.imshow(np.transpose(npimg, (1, 2, 0)))
         plt.show()
         # show images
-        imshow(torchvision.utils.make_grid(images))
+        
         
         ############################
         optimizer.zero_grad()
