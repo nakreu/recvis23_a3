@@ -9,6 +9,7 @@ from tqdm import tqdm
 import torchvision
 from model_factory import ModelFactory
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def opts() -> argparse.ArgumentParser:
