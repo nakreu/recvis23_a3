@@ -30,9 +30,9 @@ def opts() -> argparse.ArgumentParser:
     parser.add_argument(
         "--batch-size",
         type=int,
-        default=64,
+        default=135,
         metavar="B",
-        help="input batch size for training (default: 64)",
+        help="input batch size for training (default: 135)",
     )
     parser.add_argument(
         "--epochs",
@@ -44,9 +44,9 @@ def opts() -> argparse.ArgumentParser:
     parser.add_argument(
         "--lr",
         type=float,
-        default=0.1,
+        default=0.001,
         metavar="LR",
-        help="learning rate (default: 0.01)",
+        help="learning rate (default: 0.001)",
     )
     parser.add_argument(
         "--momentum",
