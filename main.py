@@ -105,22 +105,23 @@ def train(
     """
     model.train()
     correct = 0
-    for batch_idx, (data, target) in enumerate(train_loader):
-        if use_cuda:
-            data, target = data.cuda(), target.cuda()
+     ######################
         
-        ######################
-        
-        dataiter = iter(train_loader)
-        images, labels = next(dataiter)
-        img = torchvision.utils.make_grid(images)
-        npimg = img.numpy()
-        plt.imshow(np.transpose(npimg, (1, 2, 0)).astype('uint8'))
-        plt.show()
+    dataiter = iter(train_loader)
+    images, labels = next(dataiter)
+    img = torchvision.utils.make_grid(images)
+    npimg = img.numpy()
+    plt.imshow(np.transpose(npimg, (1, 2, 0)).astype('uint8'))
+    plt.show()
         # show images
         
         
         ############################
+    for batch_idx, (data, target) in enumerate(train_loader):
+        if use_cuda:
+            data, target = data.cuda(), target.cuda()
+        
+    
         optimizer.zero_grad()
         output = model(data)
         criterion = torch.nn.CrossEntropyLoss(reduction="mean")
