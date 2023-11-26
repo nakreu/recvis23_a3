@@ -192,7 +192,7 @@ def main():
     # load model and transform
     model, data_transforms = ModelFactory(args.model_name).get_all()
     if use_cuda:
-        print("Using GPU and Erkan's model")
+        print("Using GPU and Erkan's model and label instead of category")
         model.cuda()
     else:
         print("Using CPU")
