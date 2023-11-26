@@ -8,6 +8,7 @@ from torchvision import datasets
 from tqdm import tqdm
 import torchvision
 from model_factory import ModelFactory
+import matplotlib.pyplot as plt
 
 
 def opts() -> argparse.ArgumentParser:
