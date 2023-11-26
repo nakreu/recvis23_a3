@@ -6,7 +6,7 @@ import torch.optim as optim
 from torch.autograd import Variable
 from torchvision import datasets
 from tqdm import tqdm
-
+import torchvision
 from model_factory import ModelFactory
 
 
