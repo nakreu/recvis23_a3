@@ -1,6 +1,5 @@
 import argparse
 import os
-#yo
 import torch
 import torch.nn as nn
 import torch.optim as optim
