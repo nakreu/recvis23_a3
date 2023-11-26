@@ -22,6 +22,7 @@ class Net(nn.Module):
         self.linear7 = nn.Linear(512,512)
         self.dropout7 = nn.Dropout(p=0.5)
         self.linear8 = nn.Linear(512,250)
+        self.softmax = nn.Softmax()
         
 
     def forward(self, x):
@@ -39,4 +40,5 @@ class Net(nn.Module):
         x = self.linear7(x)
         x = F.relu(self.dropout7(x))
         x = self.linear8(x)
+        x = self.softmax(x)
         return x
