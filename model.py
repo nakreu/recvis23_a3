@@ -15,7 +15,7 @@ class Net(nn.Module):
         self.conv3 = nn.Conv2d(128, 256, kernel_size=2,stride=1, padding=1)
         self.conv4 = nn.Conv2d(256,256, kernel_size=3, stride=1, padding=1)
         self.conv5 = nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1)
-        self.maxpool5 = nn.MaxPool2d(kernel_size=2, stride=2, padding=1)
+        self.maxpool5 = nn.MaxPool2d(kernel_size=2, stride=1, padding=1)
         self.flatten = nn.Flatten()
         self.linear6 = nn.Linear(256*3*3, 512, bias=True)
         self.dropout6 = nn.Dropout(p=0.5)
