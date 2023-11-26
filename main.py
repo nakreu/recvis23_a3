@@ -106,6 +106,15 @@ def train(
     for batch_idx, (data, target) in enumerate(train_loader):
         if use_cuda:
             data, target = data.cuda(), target.cuda()
+        
+        ######################
+        dataiter = iter(train_loader)
+        images, labels = next(dataiter)
+
+        # show images
+        imshow(torchvision.utils.make_grid(images))
+        
+        ############################
         optimizer.zero_grad()
         output = model(data)
         criterion = torch.nn.CrossEntropyLoss(reduction="mean")
