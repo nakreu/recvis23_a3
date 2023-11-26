@@ -24,12 +24,17 @@ class Net(nn.Module):
         
 
     def forward(self, x):
-        x = F.relu(self.maxpool1(self.conv1(x))
-        x = F.relu(self.maxpool2(self.conv2(x))
+        x = self.conv1(x)
+        x = F.relu(self.maxpool1(x))
+        x = self.conv2(x)
+        x = F.relu(self.maxpool2(x))
         x = F.relu(self.conv3(x))
         x = F.relu(self.conv4(x))
-        x = F.relu(self.maxpool5(self.conv5(x)))
-        x = F.relu(self.dropout6(self.linear6(x)))
-        x = F.relu(self.dropout7(self.linear7(x)))
+        x = self.conv5(x)
+        x = F.relu(self.maxpool5(x))
+        x = self.linear6(x)
+        x = F.relu(self.dropout6(x))
+        x = self.linear7(x)
+        x = F.relu(self.dropout7(x))
         x = self.linear8(x)
         return x
