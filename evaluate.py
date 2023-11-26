@@ -64,7 +64,7 @@ def main() -> None:
     model.load_state_dict(state_dict)
     model.eval()
     if use_cuda:
-        print("Using GPU")
+        print("Using GPU and Erkan's model")
         model.cuda()
     else:
         print("Using CPU")
