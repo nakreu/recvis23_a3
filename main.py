@@ -107,12 +107,12 @@ def train(
     correct = 0
      ######################
         
-    dataiter = iter(train_loader)
-    images, labels = next(dataiter)
-    img = torchvision.utils.make_grid(images)
-    npimg = img.numpy()
-    plt.imshow(np.transpose(npimg, (1, 2, 0)).astype('uint8'))
-    plt.show()
+    #dataiter = iter(train_loader)
+    #images, labels = next(dataiter)
+    #img = torchvision.utils.make_grid(images)
+    #npimg = img.numpy()
+    #plt.imshow(np.transpose(npimg, (1, 2, 0)).astype('uint8'))
+    #plt.show()
         # show images
         
         
