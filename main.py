@@ -208,7 +208,7 @@ def main():
     # load model and transform
     model, data_transforms = ModelFactory(args.model_name).get_all()
     if use_cuda:
-        print("Using GPU and sketch-a-net architechture model with lr=0.001 and batch_size=135")
+        print("Using GPU and ResNet architechture model with lr=0.001 and batch_size=135")
         model.cuda()
     else:
         print("Using CPU")
