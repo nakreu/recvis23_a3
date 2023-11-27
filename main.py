@@ -105,18 +105,7 @@ def train(
     """
     model.train()
     correct = 0
-     ######################
-        
-    #dataiter = iter(train_loader)
-    #images, labels = next(dataiter)
-    #img = torchvision.utils.make_grid(images)
-    #npimg = img.numpy()
-    #plt.imshow(np.transpose(npimg, (1, 2, 0)).astype('uint8'))
-    #plt.show()
-        # show images
-        
-        
-        ############################
+     
     for batch_idx, (data, target) in enumerate(train_loader):
         if use_cuda:
             data, target = data.cuda(), target.cuda()
@@ -215,13 +204,13 @@ def main():
 
     # Data initialization and loading
     train_loader = torch.utils.data.DataLoader(
-        datasets.ImageFolder(args.data + "/train_images", transform=data_transforms),
+        datasets.ImageFolder(args.data + "/train_images", transform=data_transforms_train),
         batch_size=args.batch_size,
         shuffle=True,
         num_workers=args.num_workers,
     )
     val_loader = torch.utils.data.DataLoader(
-        datasets.ImageFolder(args.data + "/val_images", transform=data_transforms),
+        datasets.ImageFolder(args.data + "/val_images", transform=data_transforms_val),
         batch_size=args.batch_size,
         shuffle=False,
         num_workers=args.num_workers,
