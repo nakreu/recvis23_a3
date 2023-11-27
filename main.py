@@ -39,16 +39,16 @@ def opts() -> argparse.ArgumentParser:
     parser.add_argument(
         "--epochs",
         type=int,
-        default=20,
+        default=40,
         metavar="N",
-        help="number of epochs to train (default: 20)",
+        help="number of epochs to train (default: 40)",
     )
     parser.add_argument(
         "--lr",
         type=float,
-        default=0.1,
+        default=0.05,
         metavar="LR",
-        help="learning rate (default: 0.1)",
+        help="learning rate (default: 0.05)",
     )
     parser.add_argument(
         "--momentum",
@@ -197,7 +197,7 @@ def main():
     # load model and transform
     model, data_transforms_train, data_transforms_val = ModelFactory(args.model_name).get_all()
     if use_cuda:
-        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.1 and batch_size=64")
+        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.05, epoch=40 and batch_size=64")
         model.cuda()
     else:
         print("Using CPU")
