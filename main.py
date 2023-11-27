@@ -195,7 +195,7 @@ def main():
         os.makedirs(args.experiment)
 
     # load model and transform
-    model, data_transforms = ModelFactory(args.model_name).get_all()
+    model, data_transforms_train, data_transforms_val = ModelFactory(args.model_name).get_all()
     if use_cuda:
         print("Using GPU and ResNet architechture model, and data augmentation, no frozen parameters, simple classifier (single layer with dropout), with lr=0.1 and batch_size=64")
         model.cuda()
