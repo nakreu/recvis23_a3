@@ -41,7 +41,7 @@ def opts() -> argparse.ArgumentParser:
         type=int,
         default=10,
         metavar="N",
-        help="number of epochs to train (default: 10)",
+        help="number of epochs to train (default: 20)",
     )
     parser.add_argument(
         "--lr",
