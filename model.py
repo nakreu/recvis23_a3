@@ -12,7 +12,7 @@ class Net(nn.Module):
         for param in self.model.parameters():
             param.requires_grad = False
             # Replace the last fully-connected layer
-        self.model.fc = nn.Sequential(nn.Dropout(0.5), nn.Linear(512*model.block.expansion, nclasses))
+        self.model.fc = nn.Sequential(nn.Dropout(0.5), nn.Linear(512*self.model.block.expansion, nclasses))
     
     def forward(self, x):
         x = self.model(x)
