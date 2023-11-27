@@ -208,7 +208,7 @@ def main():
     # load model and transform
     model, data_transforms = ModelFactory(args.model_name).get_all()
     if use_cuda:
-        print("Using GPU and ResNet architechture model, without freezeing parameters and replace the classifier with our own, with lr=0.1 and batch_size=64")
+        print("Using GPU and ResNet architechture model, we froze parameters and replace the classifier with our own, with lr=0.1 and batch_size=64")
         model.cuda()
     else:
         print("Using CPU")
