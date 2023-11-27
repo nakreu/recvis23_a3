@@ -8,21 +8,21 @@ nclasses = 250
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride = 3)
+        self.conv1 = nn.Conv2d(3, 64, kernel_size=6, stride = 2)
         self.maxpool1 = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.conv2 = nn.Conv2d(64, 128, kernel_size=2, stride=1)
-        self.maxpool2 = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
-        self.conv3 = nn.Conv2d(128, 256, kernel_size=2,stride=1, padding=1)
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=4, stride=1)
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
+        self.conv3 = nn.Conv2d(128, 256, kernel_size=3,stride=1, padding=1)
         self.conv4 = nn.Conv2d(256,256, kernel_size=3, stride=1, padding=1)
         self.conv5 = nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1)
-        self.maxpool5 = nn.MaxPool2d(kernel_size=2, stride=1, padding=1)
+        self.maxpool5 = nn.MaxPool2d(kernel_size=2, stride=1, padding=0)
         self.flatten = nn.Flatten()
-        self.linear6 = nn.Linear(256*7*7, 512, bias=True)
+        self.linear6 = nn.Linear(256*4*4, 512, bias=True)
         self.dropout6 = nn.Dropout(p=0.5)
         self.linear7 = nn.Linear(512,512)
         self.dropout7 = nn.Dropout(p=0.5)
         self.linear8 = nn.Linear(512,250)
-        self.softmax = nn.LogSoftmax()
+        self.softmax = nn.Softmax(dim=1)
         
 
     def forward(self, x):
