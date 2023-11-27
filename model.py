@@ -36,11 +36,9 @@ class Net(nn.Module):
         x = F.relu(self.maxpool5(x))
         x = self.flatten(x)
         x = self.linear6(x)
-        #x = F.relu(self.dropout6(x))
-        x = F.relu(x)
+        x = F.relu(self.dropout6(x))
         x = self.linear7(x)
-        #x = F.relu(self.dropout7(x))
-        x = F.relu(x)
+        x = F.relu(self.dropout7(x))
         x = self.linear8(x)
         x = self.softmax(x)
         return x
