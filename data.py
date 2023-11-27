@@ -19,10 +19,10 @@ data_transforms_val =  v2.Compose([
         std=[0.229, 0.224, 0.225]
     )])
 
-data_transforms = transforms.Compose([
-    transforms.Resize((64, 64)),
-    transforms.ToTensor(),
-    transforms.Normalize(
+data_transforms = v2.Compose([
+    v2.Resize((64, 64)),
+    v2.ToTensor(),
+    v2.Normalize(
         mean=[0.485, 0.456, 0.406],
         std=[0.229, 0.224, 0.225]
     )
