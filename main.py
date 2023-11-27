@@ -210,7 +210,7 @@ def main():
         num_workers=args.num_workers,
     )
     val_loader = torch.utils.data.DataLoader(
-        datasets.ImageFolder(args.data + "/val_images", transform=data_transforms_val),
+        datasets.ImageFolder(args.data + "/val_images", transform=data_transforms_train),
         batch_size=args.batch_size,
         shuffle=False,
         num_workers=args.num_workers,
