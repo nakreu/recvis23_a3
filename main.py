@@ -46,9 +46,9 @@ def opts() -> argparse.ArgumentParser:
     parser.add_argument(
         "--lr",
         type=float,
-        default=0.01,
+        default=0.005,
         metavar="LR",
-        help="learning rate (default: 0.01)",
+        help="learning rate (default: 0.005)",
     )
     parser.add_argument(
         "--momentum",
