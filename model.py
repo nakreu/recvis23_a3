@@ -16,7 +16,7 @@ class Net(nn.Module):
         self.model.fc = nn.Sequential(nn.Dropout(0.7), nn.Linear(n_inputs, nclasses))
         
         params = []    
-        for child in list(model.children())[:-1]:
+        for child in list(self.model.children())[:-1]:
             params.extend(list(child.parameters()))
         self.base = params 
     
