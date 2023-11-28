@@ -197,7 +197,7 @@ def main():
     # load model and transform
     model, data_transforms_train, data_transforms_val = ModelFactory(args.model_name).get_all()
     if use_cuda:
-        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.1, epoch=80 and batch_size=32")
+        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.0005, epoch=80 and batch_size=32")
         model.cuda()
     else:
         print("Using CPU")
@@ -217,7 +217,7 @@ def main():
     )
 
     # Setup optimizer
-    optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum)
+    optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=0.0005)
 
     # Loop over the epochs
     best_val_loss = 1e8
