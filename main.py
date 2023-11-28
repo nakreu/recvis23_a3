@@ -32,9 +32,9 @@ def opts() -> argparse.ArgumentParser:
     parser.add_argument(
         "--batch-size",
         type=int,
-        default=135,
+        default=32,
         metavar="B",
-        help="input batch size for training (default: 135)",
+        help="input batch size for training (default: 32)",
     )
     parser.add_argument(
         "--epochs",
@@ -197,7 +197,7 @@ def main():
     # load model and transform
     model, data_transforms_train, data_transforms_val = ModelFactory(args.model_name).get_all()
     if use_cuda:
-        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.1, epoch=80 and batch_size=135")
+        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.1, epoch=80 and batch_size=32")
         model.cuda()
     else:
         print("Using CPU")
