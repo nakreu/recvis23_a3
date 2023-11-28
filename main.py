@@ -217,7 +217,7 @@ def main():
     )
 
     # Setup optimizer
-    optimizer = optim.SGD([{'params': model.base()},
+    optimizer = optim.SGD([{'params': model.base},
                 {'params': model.model.fc.parameters(), 'lr': 0.1}], lr=args.lr, momentum=args.momentum, weight_decay=0.00002)
 
     # Loop over the epochs
