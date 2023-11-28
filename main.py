@@ -218,7 +218,7 @@ def main():
 
     # Setup optimizer
     optimizer = optim.SGD([{'params': model.base},
-                {'params': model.model.fc.parameters(), 'lr': 0.1}], lr=args.lr, momentum=args.momentum, weight_decay=0.00002)
+                {'params': model.model.fc.parameters(), 'lr': 0.1}], lr=args.lr, momentum=args.momentum, weight_decay=0.00005)
 
     # Loop over the epochs
     best_val_loss = 1e8
