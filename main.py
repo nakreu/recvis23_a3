@@ -32,16 +32,16 @@ def opts() -> argparse.ArgumentParser:
     parser.add_argument(
         "--batch-size",
         type=int,
-        default=64,
+        default=135,
         metavar="B",
-        help="input batch size for training (default: 64)",
+        help="input batch size for training (default: 135)",
     )
     parser.add_argument(
         "--epochs",
         type=int,
-        default=40,
+        default=80,
         metavar="N",
-        help="number of epochs to train (default: 40)",
+        help="number of epochs to train (default: 80)",
     )
     parser.add_argument(
         "--lr",
