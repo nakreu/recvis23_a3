@@ -13,7 +13,7 @@ class Net(nn.Module):
         self.model = resnet50(weights=ResNet50_Weights.DEFAULT)
         n_inputs = self.model.fc.in_features
         #replace last-layer with an adapted classifier with nn.Dropout for regularization
-        self.model.fc = nn.Sequential(nn.Dropout(0.7), nn.Linear(n_inputs, nclasses))
+        self.model.fc = nn.Sequential(nn.Dropout(0.8), nn.Linear(n_inputs, nclasses))
         
         params = []    
         for child in list(self.model.children())[:-1]:
