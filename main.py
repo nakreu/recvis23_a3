@@ -46,9 +46,9 @@ def opts() -> argparse.ArgumentParser:
     parser.add_argument(
         "--lr",
         type=float,
-        default=0.1,
+        default=0.01,
         metavar="LR",
-        help="learning rate (default: 0.1)",
+        help="learning rate (default: 0.01)",
     )
     parser.add_argument(
         "--momentum",
@@ -217,7 +217,8 @@ def main():
     )
 
     # Setup optimizer
-    optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=0.00002)
+    optimizer = optim.SGD([{'params': model.parameters()},
+                {'params': model.fc.parameters(), 'lr': 0.1}], lr=args.lr, momentum=args.momentum, weight_decay=0.00002)
 
     # Loop over the epochs
     best_val_loss = 1e8
