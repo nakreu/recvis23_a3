@@ -197,7 +197,7 @@ def main():
     # load model and transform
     model, data_transforms_train, data_transforms_val = ModelFactory(args.model_name).get_all()
     if use_cuda:
-        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.1, epoch=40 and batch_size=64")
+        print("Using GPU and ResNet architechture model, and data augmentation (different transforms for train, val, and evaluate), no frozen parameters, simple classifier (single layer with dropout), with lr=0.1, epoch=80 and batch_size=135")
         model.cuda()
     else:
         print("Using CPU")
